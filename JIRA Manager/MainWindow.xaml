@@ -4,8 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListView x:Name="IssueListView" Grid.Row="0" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Summary" DisplayMemberBinding="{Binding Summary}" />
+                    <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Type}" />
+                    <GridViewColumn Header="Reporter" DisplayMemberBinding="{Binding Reporter}"  />
+                    <GridViewColumn Header="Assignee" DisplayMemberBinding="{Binding Assignee}" />
+                    <GridViewColumn Header="Priority" DisplayMemberBinding="{Binding Priority}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="WorkLogListView" Grid.Row="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Author" DisplayMemberBinding="{Binding Author}" />
+                    <GridViewColumn Header="Comment" DisplayMemberBinding="{Binding Comment}"  />
+                    <GridViewColumn Header="CreateDate" DisplayMemberBinding="{Binding CreateDate}" />
+                    <GridViewColumn Header="TimeSpent" DisplayMemberBinding="{Binding TimeSpent}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

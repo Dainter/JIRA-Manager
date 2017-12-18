@@ -1,0 +1,255 @@
+﻿<r:RibbonWindow x:Class="GraphDB.Tool.ConfigWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:r="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
+        xmlns:drawing="clr-namespace:GraphDB.Tool.Drawing"
+        Title="GraphDB Configuration Tool" Height="550" Width="850"
+        Icon="/GraphDB;component/Tool/images/SmartTaskChain.ico"
+        Loaded="RibbonWindow_Loaded" Closing="RibbonWindow_Closing">
+    <r:RibbonWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="UI_Resources/ToolTipResource.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="UI_Resources/CommandResource.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="UI_Resources/StyleResource.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="UI_Resources/ConverterResource.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </r:RibbonWindow.Resources>
+    <r:RibbonWindow.CommandBindings>
+        <CommandBinding x:Name="NewCommand" Command="{StaticResource NewCommand}" Executed="NewCommand_Executed"></CommandBinding>
+        <CommandBinding x:Name="OpenCommand" Command="{StaticResource OpenCommand}" Executed="OpenCommand_Executed"></CommandBinding>
+        <CommandBinding x:Name="SaveCommand" Command="{StaticResource SaveCommand}" Executed="SaveCommand_Executed" CanExecute="SaveCommand_CanExecute"></CommandBinding>
+        <CommandBinding x:Name="SaveAsCommand" Command="{StaticResource SaveAsCommand}" Executed="SaveAsCommand_Executed" CanExecute="SaveAsCommand_CanExecute"></CommandBinding>
+        <CommandBinding x:Name="QuickPrintCommand" Command="{StaticResource QuickPrintCommand}" Executed="QuickPrintCommand_Executed" CanExecute="QuickPrintCommand_CanExecute"></CommandBinding>
+        <CommandBinding x:Name="PrintPreviewCommand" Command="{StaticResource PrintPreviewCommand}" Executed="PrintPreviewCommand_Executed" CanExecute="PrintPreviewCommand_CanExecute"></CommandBinding>
+        <CommandBinding x:Name="PrintCommand" Command="{StaticResource PrintCommand}" Executed="PrintCommand_Executed" CanExecute="PrintCommand_CanExecute"></CommandBinding>
+        <CommandBinding x:Name="CloseCommand" Command="{StaticResource CloseCommand}" Executed="CloseCommand_Executed" CanExecute="CloseCommand_CanExecute"></CommandBinding>
+        <CommandBinding x:Name="ExitCommand" Command="{StaticResource ExitCommand}" Executed="ExitCommand_Executed"></CommandBinding>
+        <CommandBinding x:Name="ClearCommand" Command="{StaticResource ClearComCommand}" Executed="ClearCommand_Executed" CanExecute="ClearCommand_CanExecute"></CommandBinding>
+        <CommandBinding x:Name="ClearResultCommand" Command="{StaticResource ClearResultCommand}" Executed="ClearResultCommand_Executed" CanExecute="ClearResultCommand_CanExecute"></CommandBinding>
+        <CommandBinding x:Name="RefreshCommand" Command="{StaticResource RefreshCommand}" Executed="RefreshCommand_Executed" CanExecute="RefreshCommand_CanExecute"></CommandBinding>
+
+        <CommandBinding x:Name="AddEdgeCommand" Command="{StaticResource AddEdgeCommand}" Executed="AddEdgeCommand_Executed" CanExecute="AddEdgeCommand_CanExecute"></CommandBinding>
+        <CommandBinding x:Name="ModifyEdgeCommand" Command="{StaticResource ModifyEdgeCommand}" Executed="ModifyEdgeCommand_Executed" CanExecute="ModifyEdgeCommand_CanExecute"></CommandBinding>
+        <CommandBinding x:Name="RemoveNodeCommand" Command="{StaticResource RemoveNodeCommand}" Executed="RemoveNodeCommand_Executed" CanExecute="RemoveNodeCommand_CanExecute"></CommandBinding>
+        <CommandBinding x:Name="RemoveEdgeCommand" Command="{StaticResource RemoveEdgeCommand}" Executed="RemoveEdgeCommand_Executed" CanExecute="RemoveEdgeCommand_CanExecute"></CommandBinding>
+    </r:RibbonWindow.CommandBindings>
+    <Grid Name="MainLayout" DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window, AncestorLevel=1}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="400*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="200*" MinWidth="200"/>
+        </Grid.ColumnDefinitions>
+        <r:Ribbon Name="MainRibbon" Grid.ColumnSpan="5">
+            <r:Ribbon.Resources>
+                <r:RibbonGroupSizeDefinitionBaseCollection x:Key="RibbonLayout">
+                    <r:RibbonGroupSizeDefinition>
+                        <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True"/>
+                        <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True"/>
+                        <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True"/>
+                        <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True"/>
+                    </r:RibbonGroupSizeDefinition>
+                    <r:RibbonGroupSizeDefinition>
+                        <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True"/>
+                        <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True"/>
+                        <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True"/>
+                        <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True"/>
+                    </r:RibbonGroupSizeDefinition>
+                    <r:RibbonGroupSizeDefinition>
+                        <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="False"/>
+                        <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="False"/>
+                        <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="False"/>
+                        <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True"/>
+                    </r:RibbonGroupSizeDefinition>
+                    <r:RibbonGroupSizeDefinition>
+                        <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="False"/>
+                        <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="False"/>
+                        <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="False"/>
+                        <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True"/>
+                    </r:RibbonGroupSizeDefinition>
+                    <r:RibbonGroupSizeDefinition>
+                        <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="False"/>
+                        <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="False"/>
+                        <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="False"/>
+                        <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="False"/>
+                    </r:RibbonGroupSizeDefinition>
+                    <r:RibbonGroupSizeDefinition IsCollapsed="True"/>
+                </r:RibbonGroupSizeDefinitionBaseCollection>
+            </r:Ribbon.Resources>
+            <r:Ribbon.ApplicationMenu>
+                <r:RibbonApplicationMenu SmallImageSource="/GraphDB;component/Tool/images/siemens_logo_16.png">
+                    <r:RibbonApplicationMenuItem Header="New" Command="{StaticResource NewCommand}" ImageSource="/GraphDB;component/Tool/images/FileNew.png" ToolTipTitle="New" ToolTipDescription="{StaticResource NewTip}">
+                    </r:RibbonApplicationMenuItem>
+                    <r:RibbonApplicationMenuItem Header="Open" Command="{StaticResource OpenCommand}" ImageSource="/GraphDB;component/Tool/images/FileOpen.png" ToolTipTitle="Open" ToolTipDescription="{StaticResource OpenTip}">
+                    </r:RibbonApplicationMenuItem>
+                    <r:RibbonApplicationMenuItem Header="Save" Command="{StaticResource SaveCommand}" ImageSource="/GraphDB;component/Tool/images/FileSave.png" ToolTipTitle="Save" ToolTipDescription="{StaticResource SaveTip}">
+                    </r:RibbonApplicationMenuItem>
+                    <r:RibbonApplicationMenuItem Header="SaveAs" Command="{StaticResource SaveAsCommand}" ImageSource="/GraphDB;component/Tool/images/FileSaveAs.png" ToolTipTitle="Save As" ToolTipDescription="{StaticResource SaveAsTip}">
+                    </r:RibbonApplicationMenuItem>
+                    <r:RibbonApplicationMenuItem Header="Print" ImageSource="/GraphDB;component/Tool/images/FilePrint.png">
+                        <r:RibbonApplicationMenuItem Header="Quick Print" Command="{StaticResource QuickPrintCommand}" ImageSource="/GraphDB;component/Tool/images/FilePrintQuick.png" ToolTipTitle="Quick Print" ToolTipDescription="{StaticResource QuickPrintTip}"></r:RibbonApplicationMenuItem>
+                        <r:RibbonApplicationMenuItem Header="Print Preview" Command="{StaticResource PrintPreviewCommand}" ImageSource="/GraphDB;component/Tool/images/FilePrintPreview.png" ToolTipTitle="Print Preview" ToolTipDescription="{StaticResource PrintPreviewTip}"></r:RibbonApplicationMenuItem>
+                        <r:RibbonApplicationMenuItem Header="Print" Command="{StaticResource PrintCommand}" ImageSource="/GraphDB;component/Tool/images/FilePrint.png" ToolTipTitle="Print" ToolTipDescription="{StaticResource PrintTip}"></r:RibbonApplicationMenuItem>
+                    </r:RibbonApplicationMenuItem>
+                    <r:RibbonApplicationMenuItem Header="Close Database" Command="{StaticResource CloseCommand}" ImageSource="/GraphDB;component/Tool/images/FileClose.png" ToolTipTitle="Close Database" ToolTipDescription="{StaticResource CloseDbTip}">
+                    </r:RibbonApplicationMenuItem>
+                    <r:RibbonApplicationMenu.FooterPaneContent>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <r:RibbonButton Grid.Column="1" Label="Option"  SmallImageSource="/GraphDB;component/Tool/images/Option_16x16.png" ToolTipTitle="Option" ToolTipDescription="{StaticResource OptionTip}"/>
+                            <r:RibbonButton Grid.Column="2" Label="Exit" Command="{StaticResource ExitCommand}" SmallImageSource="/GraphDB;component/Tool/images/Exit_16x16.png" ToolTipTitle="Exit" ToolTipDescription="{StaticResource ExitTip}"/>
+                        </Grid>
+                    </r:RibbonApplicationMenu.FooterPaneContent>
+                </r:RibbonApplicationMenu>
+            </r:Ribbon.ApplicationMenu>
+            <r:Ribbon.QuickAccessToolBar>
+                <r:RibbonQuickAccessToolBar>
+                    <r:RibbonButton Label="Save" Command="{StaticResource SaveCommand}" SmallImageSource="/GraphDB;component/Tool/images/FileSave_16x16.png"></r:RibbonButton>
+                    <r:RibbonButton Label="Refresh" Command="{StaticResource RefreshCommand}" SmallImageSource="/GraphDB;component/Tool/images/Refresh_16x16.png"></r:RibbonButton>
+                </r:RibbonQuickAccessToolBar>
+            </r:Ribbon.QuickAccessToolBar>
+            <r:RibbonTab Name = "RibHomeTab" Header="Home" >
+                <r:RibbonGroup Header="File" GroupSizeDefinitions="{StaticResource RibbonLayout}">
+                    <r:RibbonButton Label="New" Command="{StaticResource NewCommand}" LargeImageSource="/GraphDB;component/Tool/images/FileNew.png" SmallImageSource="/GraphDB;component/Tool/images/FileNew_16x16.png" ToolTipTitle="New" ToolTipDescription="{StaticResource NewTip}"></r:RibbonButton>
+                    <r:RibbonButton Label="Open" Command ="{StaticResource OpenCommand}" LargeImageSource="/GraphDB;component/Tool/images/FileOpen.png" SmallImageSource="/GraphDB;component/Tool/images/FileOpen_small.png" ToolTipTitle="Open" ToolTipDescription="{StaticResource OpenTip}"></r:RibbonButton>
+                    <r:RibbonButton Label="Close" Command="{StaticResource CloseCommand}" LargeImageSource="/GraphDB;component/Tool/images/FileClose.png" SmallImageSource="/GraphDB;component/Tool/images/File_close_small.png" ToolTipTitle="Close Database" ToolTipDescription="{StaticResource CloseDbTip}"></r:RibbonButton>
+                    <r:RibbonSplitButton Label="Save" Command="{StaticResource SaveCommand}" LargeImageSource="/GraphDB;component/Tool/images/FileSave.png" SmallImageSource="/GraphDB;component/Tool/images/FileSave_16x16.png" IsDropDownOpen="False" CanAddToQuickAccessToolBarDirectly="False">
+                        <r:RibbonSplitButton.Items>
+                            <r:RibbonButton Label="Save" Command="{StaticResource SaveCommand}" LargeImageSource="/GraphDB;component/Tool/images/FileSave.png" SmallImageSource="/GraphDB;component/Tool/images/FileSave_16x16.png" ToolTipTitle="Save" ToolTipDescription="{StaticResource SaveTip}"></r:RibbonButton>
+                            <r:RibbonButton Label="Save As" Command="{StaticResource SaveAsCommand}" LargeImageSource="/GraphDB;component/Tool/images/FileSaveAs.png" SmallImageSource="/GraphDB;component/Tool/images/FileSave_16x16.png" ToolTipTitle="Save As" ToolTipDescription="{StaticResource SaveAsTip}"></r:RibbonButton>
+                        </r:RibbonSplitButton.Items>
+                    </r:RibbonSplitButton>
+                </r:RibbonGroup>
+                <r:RibbonGroup Header="Print" GroupSizeDefinitions="{StaticResource RibbonLayout}" LargeImageSource="/GraphDB;component/Tool/images/FilePrint.png">
+                    <r:RibbonButton Label="Quick Print" Command="{StaticResource QuickPrintCommand}" LargeImageSource="/GraphDB;component/Tool/images/FilePrintQuick.png" SmallImageSource="/GraphDB;component/Tool/images/FilePrintQuick_small.png" ToolTipTitle="Quick Print" ToolTipDescription="{StaticResource QuickPrintTip}"></r:RibbonButton>
+                    <r:RibbonButton Label="Print Preview" Command="{StaticResource PrintPreviewCommand}" LargeImageSource="/GraphDB;component/Tool/images/FilePrintPreview.png" SmallImageSource="/GraphDB;component/Tool/images/FilePrintPreview_small.png" ToolTipTitle="Print Preview" ToolTipDescription="{StaticResource PrintPreviewTip}"></r:RibbonButton>
+                    <r:RibbonButton Label="Print" Command="{StaticResource PrintCommand}" LargeImageSource="/GraphDB;component/Tool/images/FilePrint.png" SmallImageSource="/GraphDB;component/Tool/images/FilePrint_small.png" ToolTipTitle="Print" ToolTipDescription="{StaticResource PrintTip}"></r:RibbonButton>
+                </r:RibbonGroup>
+                <r:RibbonGroup Header="Clear" LargeImageSource="/GraphDB;component/Tool/images/ClearText.png">
+                    <r:RibbonSplitButton Label="Clear" Command="{StaticResource ClearComCommand}" LargeImageSource="/GraphDB;component/Tool/images/ClearText.png" SmallImageSource="/GraphDB;component/Tool/images/ClearText_16x16.png" CanAddToQuickAccessToolBarDirectly="False">
+                        <r:RibbonSplitButton.Items>
+                            <r:RibbonButton Label="Clear Command" Command="{StaticResource ClearComCommand}" LargeImageSource="/GraphDB;component/Tool/images/ClearText.png" SmallImageSource="/GraphDB;component/Tool/images/ClearText_16x16.png" ToolTipTitle="Clear Command" ToolTipDescription="{StaticResource ClearCommandTip}"></r:RibbonButton>
+                            <r:RibbonButton Label="Clear Result" Command="{StaticResource ClearResultCommand}" LargeImageSource="/GraphDB;component/Tool/images/ClearText.png" SmallImageSource="/GraphDB;component/Tool/images/ClearText_16x16.png" ToolTipTitle="Clear Result" ToolTipDescription="{StaticResource ClearResultTip}"></r:RibbonButton>
+                        </r:RibbonSplitButton.Items>
+                    </r:RibbonSplitButton>
+                </r:RibbonGroup>
+                <r:RibbonGroup Header="Styles" LargeImageSource="/GraphDB;component/Tool/images/NodeStyles.png">
+                    <r:RibbonSplitButton Label="Node Style" LargeImageSource="/GraphDB;component/Tool/images/NodeStyles.png" SmallImageSource="/GraphDB;component/Tool/images/NodeStyles_16x16.png" CanAddToQuickAccessToolBarDirectly="False">
+                        <r:RibbonGallery x:Name="NodeStyleSelection" MaxColumnCount="1" ColumnsStretchToFill="True" SelectionChanged="NodeStyleSelection_SelectionChanged">
+                            <r:RibbonGalleryCategory>
+                                <r:RibbonGalleryItem Template="{StaticResource DefaultNodeTemplate}" ToolTipTitle="默认样式" ToolTipDescription="{StaticResource DefaultStyleTip}">节点</r:RibbonGalleryItem>
+                                <r:RibbonGalleryItem Template="{StaticResource PurpleNodeTemplate}" ToolTipTitle="深邃星空" ToolTipDescription="{StaticResource PurpleStyleTip}">节点</r:RibbonGalleryItem>
+                                <r:RibbonGalleryItem Template="{StaticResource BlueNodeTemplate}" ToolTipTitle="底比斯之水" ToolTipDescription="{StaticResource BlueStyleTip}">节点</r:RibbonGalleryItem>
+                                <r:RibbonGalleryItem Template="{StaticResource PinkNodeTemplate}" ToolTipTitle="千本樱" ToolTipDescription="{StaticResource PinkStyleTip}">节点</r:RibbonGalleryItem>
+                            </r:RibbonGalleryCategory>
+                        </r:RibbonGallery>
+                    </r:RibbonSplitButton>
+                </r:RibbonGroup>
+            </r:RibbonTab>
+            <r:RibbonTab Name="RibGraphTab" Header ="Graph">
+                <r:RibbonGroup Header="Node" LargeImageSource="/GraphDB;component/Tool/images/RemoveNode.png">
+                    <Grid Height="64" Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="60"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">Name:</Label>
+                        <TextBox Name="RemoveNodeName" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Text="{Binding ElementName=StatusNameBox, Path=Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                    </Grid>
+                    <r:RibbonButton Name="RemoveNodeButton" Label="Remove Node" Command="{StaticResource RemoveNodeCommand}" LargeImageSource="/GraphDB;component/Tool/images/RemoveNode.png" SmallImageSource="/GraphDB;component/Tool/images/RemoveNode_small.png" ToolTipTitle="Remove Node" ToolTipDescription="{StaticResource RemoveNodeTip}"></r:RibbonButton>
+                </r:RibbonGroup>
+                <r:RibbonGroup Header="Edge" LargeImageSource="/GraphDB;component/Tool/images/AddEdge.png">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="32"/>
+                            <RowDefinition Height="32"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="5"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">Start Name:</Label>
+                        <TextBox Name="StartNodeName" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Text="{Binding ElementName=StatusNameBox, Path=Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">End Name:</Label>
+                        <ComboBox Name="EndNodeName" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" SelectionChanged="EndNodeNameComboBox_SelectionChanged" IsEditable="True"></ComboBox>
+                    </Grid>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="32"/>
+                            <RowDefinition Height="32"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="5"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">Attribute:</Label>
+                        <ComboBox Name="EdgeAttributeBox" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" IsEditable="True" SelectionChanged="EdgeAttributeBox_SelectionChanged" ></ComboBox>
+                        <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">Value:</Label>
+                        <TextBox Name="EdgeValueBox" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                    </Grid>
+                    <r:RibbonButton Name="AddEdgeButton" Label="Add Edge" Command="{StaticResource AddEdgeCommand}" LargeImageSource="/GraphDB;component/Tool/images/AddEdge.png" SmallImageSource="/GraphDB;component/Tool/images/AddEdge_small.png" ToolTipTitle="Add Edge" ToolTipDescription="{StaticResource AddEdgeTip}"></r:RibbonButton>
+                    <r:RibbonButton Name="ModifyEdgeButton" Label="Modify Edge" Command="{StaticResource ModifyEdgeCommand}" LargeImageSource="/GraphDB;component/Tool/images/Modify.png" SmallImageSource="/GraphDB;component/Tool/images/Modify_small.png" ToolTipTitle="Modify Edge" ToolTipDescription="{StaticResource ModifyEdgeTip}"></r:RibbonButton>
+                    <r:RibbonButton Name="RemoveEdgeButton" Label="Remove Edge" Command ="{StaticResource RemoveEdgeCommand}" LargeImageSource="/GraphDB;component/Tool/images/RemoveEdge.png" SmallImageSource="/GraphDB;component/Tool/images/RemoveEdge_small.png" ToolTipTitle="Remove Edge" ToolTipDescription="{StaticResource RemoveEdgeTip}"></r:RibbonButton>
+                </r:RibbonGroup>
+            </r:RibbonTab>
+        </r:Ribbon>
+        <StatusBar Name="MainStatus" Grid.ColumnSpan="5" Grid.Column="0" Grid.Row="2">
+            <StatusBarItem>
+                <Label Name="StatusLabel">Ready</Label>
+            </StatusBarItem>
+            <StatusBarItem Visibility="Hidden">
+                <TextBox Name="StatusNameBox" TextChanged="StatusNameBox_TextChanged"></TextBox>
+            </StatusBarItem>
+            <StatusBarItem>
+                <Label Name="PointLabel"></Label>
+            </StatusBarItem>
+        </StatusBar>
+        <DockPanel MinWidth="200" Background="{Binding ElementName=MainRibbon, Path=Background}" Grid.Row="1" Grid.Column="0">
+            <Label DockPanel.Dock="Top">Node List:</Label>
+            <ListBox Name="NodeListBox" Margin="3,3,3,3" SelectionChanged="NodeListBox_SelectionChanged"></ListBox>
+        </DockPanel>
+        <GridSplitter HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" Width="3"></GridSplitter>
+        <Border Grid.Row="1" Grid.Column="2" Margin="3" BorderBrush="SteelBlue" BorderThickness="1">
+            <ScrollViewer Name="MainScroll" CanContentScroll="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ScrollChanged="MainScroll_ScrollChanged">
+                <Canvas x:Name="BackCanvas" Width="{Binding ElementName=DrawingSurface, Path=Width}" Height="{Binding Path=Height, ElementName=DrawingSurface}">
+                    <drawing:DrawingCanvas x:Name="DrawingSurface" ClipToBounds="True" MouseMove="DrawingSurfaceMouseMove" ToolTipService.InitialShowDelay="1" MouseLeftButtonDown="DrawingSurfaceMouseLeftButtonDown">
+                    </drawing:DrawingCanvas>
+                </Canvas>
+            </ScrollViewer>
+        </Border>
+        <GridSplitter HorizontalAlignment="Center" Grid.Column="3" Grid.Row="1" Width="3"></GridSplitter>
+        <Border Grid.Column="4" Grid.Row="1" Margin="3" BorderBrush="SteelBlue" BorderThickness="1">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <Grid x:Name="NodeInfoGrid" Background="{Binding ElementName=MainRibbon, Path=Background}" MinWidth="200" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" MinWidth="50"/>
+                        <ColumnDefinition Width="Auto" MinWidth="100"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+    <!--<r:RibbonWindow.TaskbarItemInfo>
+        <TaskbarItemInfo x:Name="RibbonTaskBar" ThumbnailClipMargin="30,30,30,30" ProgressValue="0.5" ProgressState="Indeterminate" Overlay="/GraphDB;component/Tool/images/CustomActionsMenu.png">
+            <TaskbarItemInfo.ThumbButtonInfos>
+                <ThumbButtonInfo ImageSource="/GraphDB;component/Tool/images/EditUndo_16x16.png" Description="Undo"></ThumbButtonInfo>
+                <ThumbButtonInfo ImageSource="/GraphDB;component/Tool/images/EditRedo_16x16.png" Description="Redo"></ThumbButtonInfo>
+            </TaskbarItemInfo.ThumbButtonInfos>
+        </TaskbarItemInfo>
+    </r:RibbonWindow.TaskbarItemInfo>-->
+</r:RibbonWindow>

@@ -1,0 +1,50 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="NewTip">Create a new graph database. It's a wisdom choose to save the original database at first.</sys:String>
+    <sys:String x:Key="OpenTip">Open an exsited graph database. The current one will be closed.</sys:String>
+    <sys:String x:Key="SaveTip">Save current graph database to file. If there is no file, it will create a new one.</sys:String>
+    <sys:String x:Key="SaveAsTip">Save current graph database to a new file. You can save the file to a new path or choose a new format.</sys:String>
+    <sys:String x:Key="CloseDbTip">Close current graph database. The modificaion without save will be discard.</sys:String>
+    <sys:String x:Key="QuickPrintTip">Print current graph database in XML format directly without configure.</sys:String>
+    <sys:String x:Key="PrintPreviewTip">Preview the document before print.</sys:String>
+    <sys:String x:Key="PrintTip">Print current graph database in XML format.</sys:String>
+    <sys:String x:Key="OptionTip">Edit the configuration.</sys:String>
+    <sys:String x:Key="ExitTip">Exit this program.</sys:String>
+    <sys:String x:Key="ExecuteTip">Execute the command line in the graph database. The result will return in the text box below.</sys:String>
+    <sys:String x:Key="ClearCommandTip">Clear the content of the Command Box.</sys:String>
+    <sys:String x:Key="ClearResultTip">Clear the content of the Result Box</sys:String>
+
+    <sys:String x:Key="NewTaskTip">Create a new task.</sys:String>
+    <sys:String x:Key="EditTaskTip">Edit current tasks.</sys:String>
+    <sys:String x:Key="ShowTaskDetailsTip">Show detail information of tasks.</sys:String>
+    <sys:String x:Key="EditUserTip">Edit current users</sys:String>
+    <sys:String x:Key="EditGroupTip">Edit current user groups.</sys:String>
+    <sys:String x:Key="EditQlevelTip">Edit the priority of Q levels.</sys:String>
+    <sys:String x:Key="EditTypeTip">Edit current task types.</sys:String>
+    <sys:String x:Key="EditProcedureTip">Edit current task procedures and steps.</sys:String>
+
+    <sys:String x:Key="DefaultStyleTip">默认节点样式.</sys:String>
+    <sys:String x:Key="PurpleStyleTip" xml:space="preserve">“奇迹的不是那片星域如此辽阔，而是人类竟然成功测量了它。”&#x0a;-阿纳托尔·法郎士（法国小说家）</sys:String>
+    <sys:String x:Key="BlueStyleTip" xml:space="preserve">“如果我的心像底比斯有一百座城门，我一定让快乐成打进来。”&#x0a;-苏格拉底</sys:String>
+    <sys:String x:Key="PinkStyleTip" xml:space="preserve">“春樱秋枫留不住，人去关卡亦成空。”&#x0a;-岛津义弘辞世之章（日本战国萨摩岛津家当主）</sys:String>
+
+    <sys:String x:Key="AddPropertyTip">Add the current property into new node.</sys:String>
+    <sys:String x:Key="RemovePropertyTip">Remove a select property from list.</sys:String>
+    <sys:String x:Key="AddNodeTip">Add new node into Database.</sys:String>
+    <sys:String x:Key="AddEdgeTip">Add new edge between two nodes.</sys:String>
+    <sys:String x:Key="RemoveNodeTip">Remove current node from Database.</sys:String>
+    <sys:String x:Key="RemoveEdgeTip">Remove the edge between this two nodes from Database.</sys:String>
+    <sys:String x:Key="ModifyNodeTip" xml:space="preserve">Modify the properities of current node.
+Modify Property - Select a key and Change the value of Value field, then click the button.
+Add Property - Input a new key and its value, then click the button.
+Remove Property - Select a exist key and empty its value, then click the button.
+    </sys:String>
+    <sys:String x:Key="ModifyEdgeTip" xml:space="preserve">Modify the key or value of current edge.
+Modify Edge - Change the value of Key or Value field, then click the button.    
+    </sys:String>
+
+    <sys:String x:Key="CloseTip">Close the window.</sys:String>
+    <sys:String x:Key="AcceptTip">Submit.</sys:String>
+    <sys:String x:Key="WarnTip">Please enter a non-empty value.</sys:String>
+</ResourceDictionary>

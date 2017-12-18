@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC7A8473-6D9C-4960-958E-9DE92FCC367A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GraphDB</RootNamespace>
+    <AssemblyName>GraphDB</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RibbonControlsLibrary">
+      <HintPath>..\3rdParty\Microsoft Ribbon for WPF\V4.0\RibbonControlsLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WPFToolkit.Extended">
+      <HintPath>..\3rdParty\WPFToolkit\WPFToolkit.Extended.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contract\Core\IEdge.cs" />
+    <Compile Include="Contract\Core\INode.cs" />
+    <Compile Include="Contract\Enum\EdgeDirection.cs" />
+    <Compile Include="Contract\Enum\ModifyOperation.cs" />
+    <Compile Include="Contract\Serial\IIoStrategy.cs" />
+    <Compile Include="Contract\Serial\SerializableAttribute.cs" />
+    <Compile Include="Tool\ConfigWindow.xaml.cs">
+      <DependentUpon>ConfigWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\Drawing\Arrow.cs" />
+    <Compile Include="Tool\Drawing\DrawingCanvas.cs" />
+    <Compile Include="Tool\Drawing\GraphRenderer.cs" />
+    <Compile Include="Tool\Layout\CircleLayout.cs" />
+    <Compile Include="Tool\Layout\EdgeDrawing.cs" />
+    <Compile Include="Tool\Layout\NodeDrawing.cs" />
+    <Compile Include="Tool\UI_Resources\SystemConverter.cs" />
+    <Compile Include="Utility\SerializableHelper.cs" />
+    <Compile Include="Core\Edge.cs" />
+    <Compile Include="Core\Graph.cs" />
+    <Compile Include="Core\Node.cs" />
+    <Compile Include="IO\XMLStrategy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Enum\ErrorCode.cs" />
+    <Compile Include="Utility\XmlElementExtension.cs" />
+    <Compile Include="Contract\Serial\XmlNames.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Contract\DataType\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Tool\ConfigWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tool\UI_Resources\CommandResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tool\UI_Resources\ConverterResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tool\UI_Resources\StyleResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tool\UI_Resources\ToolTipResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Tool\images\SmartTaskChain.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Tool\images\siemens_logo_16.png" />
+    <Resource Include="Tool\images\siemens_logo_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Tool\images\Close.png" />
+    <Resource Include="Tool\images\Exit.png" />
+    <Resource Include="Tool\images\Exit_16x16.png" />
+    <Resource Include="Tool\images\File PrintPreview_16x16.png" />
+    <Resource Include="Tool\images\FileClose.png" />
+    <Resource Include="Tool\images\FileNew.png" />
+    <Resource Include="Tool\images\FileNewDocument_16x16.png" />
+    <Resource Include="Tool\images\FileNew_16x16.png" />
+    <Resource Include="Tool\images\FileOpen.png" />
+    <Resource Include="Tool\images\FileOpen_16x16.png" />
+    <Resource Include="Tool\images\FileOpen_small.png" />
+    <Resource Include="Tool\images\FilePrint.png" />
+    <Resource Include="Tool\images\FilePrintPreview.png" />
+    <Resource Include="Tool\images\FilePrintPreview_small.png" />
+    <Resource Include="Tool\images\FilePrintQuick.png" />
+    <Resource Include="Tool\images\FilePrintQuick_small.png" />
+    <Resource Include="Tool\images\FilePrint_16x16.png" />
+    <Resource Include="Tool\images\FilePrint_small.png" />
+    <Resource Include="Tool\images\FileProperties.png" />
+    <Resource Include="Tool\images\FileSave.png" />
+    <Resource Include="Tool\images\FileSaveAs.png" />
+    <Resource Include="Tool\images\FileSave_16x16.png" />
+    <Resource Include="Tool\images\File_close_small.png" />
+    <Resource Include="Tool\images\NodeStyles.png" />
+    <Resource Include="Tool\images\NodeStyles_16x16.png" />
+    <Resource Include="Tool\images\Option.png" />
+    <Resource Include="Tool\images\Option_16x16.png" />
+    <Resource Include="Tool\images\Refresh.png" />
+    <Resource Include="Tool\images\Refresh_16x16.png" />
+    <Resource Include="Tool\images\ClearText.png" />
+    <Resource Include="Tool\images\ClearText_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Tool\images\AddEdge.png" />
+    <Resource Include="Tool\images\AddEdge_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Tool\images\Modify.png" />
+    <Resource Include="Tool\images\Modify_small.png" />
+    <Resource Include="Tool\images\RemoveEdge.png" />
+    <Resource Include="Tool\images\RemoveEdge_small.png" />
+    <Resource Include="Tool\images\RemoveNode.png" />
+    <Resource Include="Tool\images\RemoveNode_small.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

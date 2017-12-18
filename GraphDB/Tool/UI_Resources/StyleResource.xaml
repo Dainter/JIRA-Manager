@@ -1,0 +1,378 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:r="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary">
+    <ControlTemplate x:Key="DefaultNodeTemplate" TargetType="{x:Type r:RibbonGalleryItem}">
+        <Grid>
+            <Ellipse x:Name="EllipseShape" Fill="AliceBlue" Stroke="SteelBlue" StrokeThickness="3" Height="40" Width="40"/>
+            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ContentPresenter.Style>
+                    <Style>
+                        <Setter Value="Black">
+                            <Setter.Property>Control.Foreground</Setter.Property>
+                        </Setter>
+                    </Style>
+                </ContentPresenter.Style>
+            </ContentPresenter>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="EllipseShape" Property="Fill">
+                    <Setter.Value>
+                        <RadialGradientBrush GradientOrigin="0.496,1.052">
+                            <RadialGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform
+                                          CenterX="0.5"
+                                          CenterY="0.5"
+                                          ScaleX="1.5"
+                                          ScaleY="1.5"/>
+                                    <TranslateTransform X="0.02" Y="0.3"/>
+                                </TransformGroup>
+                            </RadialGradientBrush.RelativeTransform>
+                            <GradientStop Offset="1" Color="#00000000"/>
+                            <GradientStop Offset="0.45" Color="Gold"/>
+                        </RadialGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="EllipseShape" Property="Fill">
+                    <Setter.Value>
+                        <RadialGradientBrush GradientOrigin="0.496,1.052">
+                            <RadialGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform
+                                          CenterX="0.5"
+                                          CenterY="0.5"
+                                          ScaleX="1.5"
+                                          ScaleY="1.5"/>
+                                    <TranslateTransform X="0.02" Y="0.3"/>
+                                </TransformGroup>
+                            </RadialGradientBrush.RelativeTransform>
+                            <GradientStop Offset="1" Color="#00000000"/>
+                            <GradientStop Offset="0.3" Color="Gold"/>
+                        </RadialGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="PurpleNodeTemplate" TargetType="{x:Type r:RibbonGalleryItem}">
+        <Grid>
+            <Ellipse x:Name="EllipseShape" Fill="#FF4B0082" Stroke="#FF00008B" StrokeThickness="3" Height="40" Width="40"/>
+            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ContentPresenter.Style>
+                    <Style>
+                        <Setter Value="#FFFFFF00">
+                            <Setter.Property>Control.Foreground</Setter.Property>
+                        </Setter>
+                    </Style>
+                </ContentPresenter.Style>
+            </ContentPresenter>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="EllipseShape" Property="Fill">
+                    <Setter.Value>
+                        <RadialGradientBrush GradientOrigin="0.496,1.052">
+                            <RadialGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform
+                                          CenterX="0.5"
+                                          CenterY="0.5"
+                                          ScaleX="1.5"
+                                          ScaleY="1.5"/>
+                                    <TranslateTransform X="0.02" Y="0.3"/>
+                                </TransformGroup>
+                            </RadialGradientBrush.RelativeTransform>
+                            <GradientStop Offset="1" Color="#00000000"/>
+                            <GradientStop Offset="0.45" Color="Gold"/>
+                        </RadialGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="EllipseShape" Property="Fill">
+                    <Setter.Value>
+                        <RadialGradientBrush GradientOrigin="0.496,1.052">
+                            <RadialGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform
+                                          CenterX="0.5"
+                                          CenterY="0.5"
+                                          ScaleX="1.5"
+                                          ScaleY="1.5"/>
+                                    <TranslateTransform X="0.02" Y="0.3"/>
+                                </TransformGroup>
+                            </RadialGradientBrush.RelativeTransform>
+                            <GradientStop Offset="1" Color="#00000000"/>
+                            <GradientStop Offset="0.3" Color="Gold"/>
+                        </RadialGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="BlueNodeTemplate" TargetType="{x:Type r:RibbonGalleryItem}">
+        <Grid>
+            <Ellipse x:Name="EllipseShape" Fill="#FF00BFFF" Stroke="#FF4169E1" StrokeThickness="3" Height="40" Width="40"/>
+            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ContentPresenter.Style>
+                    <Style>
+                        <Setter Value="#FF000080">
+                            <Setter.Property>Control.Foreground</Setter.Property>
+                        </Setter>
+                    </Style>
+                </ContentPresenter.Style>
+            </ContentPresenter>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="EllipseShape" Property="Fill">
+                    <Setter.Value>
+                        <RadialGradientBrush GradientOrigin="0.496,1.052">
+                            <RadialGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform
+                                          CenterX="0.5"
+                                          CenterY="0.5"
+                                          ScaleX="1.5"
+                                          ScaleY="1.5"/>
+                                    <TranslateTransform X="0.02" Y="0.3"/>
+                                </TransformGroup>
+                            </RadialGradientBrush.RelativeTransform>
+                            <GradientStop Offset="1" Color="#00000000"/>
+                            <GradientStop Offset="0.45" Color="Gold"/>
+                        </RadialGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="EllipseShape" Property="Fill">
+                    <Setter.Value>
+                        <RadialGradientBrush GradientOrigin="0.496,1.052">
+                            <RadialGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform
+                                          CenterX="0.5"
+                                          CenterY="0.5"
+                                          ScaleX="1.5"
+                                          ScaleY="1.5"/>
+                                    <TranslateTransform X="0.02" Y="0.3"/>
+                                </TransformGroup>
+                            </RadialGradientBrush.RelativeTransform>
+                            <GradientStop Offset="1" Color="#00000000"/>
+                            <GradientStop Offset="0.3" Color="Gold"/>
+                        </RadialGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="PinkNodeTemplate" TargetType="{x:Type r:RibbonGalleryItem}">
+        <Grid>
+            <Ellipse x:Name="EllipseShape" Fill="#FFF49AC1" Stroke="#FF8000FF" StrokeThickness="3" Height="40" Width="40"/>
+            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ContentPresenter.Style>
+                    <Style>
+                        <Setter Value="#FF800040">
+                            <Setter.Property>Control.Foreground</Setter.Property>
+                        </Setter>
+                    </Style>
+                </ContentPresenter.Style>
+            </ContentPresenter>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="EllipseShape" Property="Fill">
+                    <Setter.Value>
+                        <RadialGradientBrush GradientOrigin="0.496,1.052">
+                            <RadialGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform
+                                          CenterX="0.5"
+                                          CenterY="0.5"
+                                          ScaleX="1.5"
+                                          ScaleY="1.5"/>
+                                    <TranslateTransform X="0.02" Y="0.3"/>
+                                </TransformGroup>
+                            </RadialGradientBrush.RelativeTransform>
+                            <GradientStop Offset="1" Color="#00000000"/>
+                            <GradientStop Offset="0.45" Color="Gold"/>
+                        </RadialGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="EllipseShape" Property="Fill">
+                    <Setter.Value>
+                        <RadialGradientBrush GradientOrigin="0.496,1.052">
+                            <RadialGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform
+                                          CenterX="0.5"
+                                          CenterY="0.5"
+                                          ScaleX="1.5"
+                                          ScaleY="1.5"/>
+                                    <TranslateTransform X="0.02" Y="0.3"/>
+                                </TransformGroup>
+                            </RadialGradientBrush.RelativeTransform>
+                            <GradientStop Offset="1" Color="#00000000"/>
+                            <GradientStop Offset="0.3" Color="Gold"/>
+                        </RadialGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="DefaultNodeStyle">
+        <Setter Property="Shape.Fill" Value="AliceBlue"/>
+        <Setter Property="Shape.Stroke" Value="SteelBlue"/>
+        <Setter Property="Shape.StrokeThickness" Value="3"/>
+        <Setter Property="Shape.Height" Value="54"/>
+        <Setter Property="Shape.Width" Value="54"/>
+        <Setter Property="Control.Foreground" Value="Black"/>
+    </Style>
+    <Style x:Key="PurpleNodeStyle">
+        <Setter Property="Shape.Fill" Value="#FF4B0082"/>
+        <Setter Property="Shape.Stroke" Value="#FF00008B"/>
+        <Setter Property="Shape.StrokeThickness" Value="3"/>
+        <Setter Property="Shape.Height" Value="54"/>
+        <Setter Property="Shape.Width" Value="54"/>
+        <Setter Property="Control.Foreground" Value="#FFFFFF00"/>
+    </Style>
+    <Style x:Key="BlueNodeStyle">
+        <Setter Property="Shape.Fill" Value="#FF00BFFF"/>
+        <Setter Property="Shape.Stroke" Value="#FF4169E1"/>
+        <Setter Property="Shape.StrokeThickness" Value="3"/>
+        <Setter Property="Shape.Height" Value="54"/>
+        <Setter Property="Shape.Width" Value="54"/>
+        <Setter Property="Control.Foreground" Value="#FF000080"/>
+    </Style>
+    <Style x:Key="PinkNodeStyle">
+        <Setter Property="Shape.Fill" Value="#FFF49AC1"/>
+        <Setter Property="Shape.Stroke" Value="#FF8000FF"/>
+        <Setter Property="Shape.StrokeThickness" Value="3"/>
+        <Setter Property="Shape.Height" Value="54"/>
+        <Setter Property="Shape.Width" Value="54"/>
+        <Setter Property="Control.Foreground" Value="#FF800040"/>
+    </Style>
+    <ControlTemplate x:Key="CloseButtonTemplate">
+        <Image Stretch="Fill" Source="/SmartTaskChain;component/config/images/Close.png"/>
+        <ControlTemplate.Triggers>
+            <Trigger Property="ButtonBase.IsPressed" Value="True">
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX=".9" ScaleY=".9"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="RenderTransformOrigin" Value=".5,.5"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="AcceptButtonTemplate">
+        <Image Stretch="Fill" Source="/TaskScheduler;component/config/images/Accept.png"/>
+        <ControlTemplate.Triggers>
+            <Trigger Property="ButtonBase.IsPressed" Value="True">
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX=".9" ScaleY=".9"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="RenderTransformOrigin" Value=".5,.5"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="AddGroupButtonTemplate">
+        <Image Stretch="Fill" Source="/TaskScheduler;component/Config/images/AddNode_small.png"/>
+        <ControlTemplate.Triggers>
+            <Trigger Property="ButtonBase.IsPressed" Value="True">
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX=".9" ScaleY=".9"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="RenderTransformOrigin" Value=".5,.5"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="AddUserButtonTemplate">
+        <Image Stretch="Fill" Source="/TaskScheduler;component/config/images/AddOrRemoveUser_16x16.png"/>
+        <ControlTemplate.Triggers>
+            <Trigger Property="ButtonBase.IsPressed" Value="True">
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX=".9" ScaleY=".9"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="RenderTransformOrigin" Value=".5,.5"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="AddProcedureButtonTemplate">
+        <Image Stretch="Fill" Source="/TaskScheduler;component/Config/images/AddProcedure.png"/>
+        <ControlTemplate.Triggers>
+            <Trigger Property="ButtonBase.IsPressed" Value="True">
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX=".9" ScaleY=".9"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="RenderTransformOrigin" Value=".5,.5"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="EditProcedureButtonTemplate">
+        <Image Stretch="Fill" Source="/TaskScheduler;component/Config/images/EditProcedure.png"/>
+        <ControlTemplate.Triggers>
+            <Trigger Property="ButtonBase.IsPressed" Value="True">
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX=".9" ScaleY=".9"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="RenderTransformOrigin" Value=".5,.5"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="DelProcedureButtonTemplate">
+        <Image Stretch="Fill" Source="/TaskScheduler;component/Config/images/DeleteProcedure.png"/>
+        <ControlTemplate.Triggers>
+            <Trigger Property="ButtonBase.IsPressed" Value="True">
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX=".9" ScaleY=".9"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="RenderTransformOrigin" Value=".5,.5"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="StepUpButtonTemplate">
+        <Image Stretch="Fill" Source="/TaskScheduler;component/Config/images/StepUp.png"/>
+        <ControlTemplate.Triggers>
+            <Trigger Property="ButtonBase.IsPressed" Value="True">
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX=".9" ScaleY=".9"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="RenderTransformOrigin" Value=".5,.5"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="StepDownButtonTemplate">
+        <Image Stretch="Fill" Source="/TaskScheduler;component/Config/images/StepDown.png"/>
+        <ControlTemplate.Triggers>
+            <Trigger Property="ButtonBase.IsPressed" Value="True">
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX=".9" ScaleY=".9"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="RenderTransformOrigin" Value=".5,.5"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+</ResourceDictionary>
