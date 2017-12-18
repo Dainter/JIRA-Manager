@@ -69,6 +69,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Relations\Assigned.cs" />
+    <Compile Include="Model\Relations\AssignedTo.cs" />
+    <Compile Include="Model\Relations\BelongsTo.cs" />
+    <Compile Include="Model\Relations\Include.cs" />
+    <Compile Include="Model\Relations\Report.cs" />
+    <Compile Include="Model\Relations\ReportBy.cs" />
+    <Compile Include="Model\Relations\Submit.cs" />
+    <Compile Include="Model\Relations\SubmitBy.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\UserGroup.cs" />
+    <Compile Include="Utility\CommonStrings.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -83,6 +94,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Tasks\Defect.cs" />
+    <Compile Include="Model\Tasks\SubTask.cs" />
+    <Compile Include="Model\Tasks\Task.cs" />
+    <Compile Include="Model\Tasks\Wish.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -109,6 +124,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
