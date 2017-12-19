@@ -6,11 +6,9 @@ using System.Xml;
 using GraphDB.Contract.Serial;
 using GraphDB.Core;
 
-using SerializableAttribute = GraphDB.Contract.Serial.SerializableAttribute;
-
 namespace GraphDB.Utility
 {
-    public static class SerializableHelper
+    internal static class SerializableHelper
     {
         public static XmlElement Serialize(XmlDocument doc, object obj)
         {
@@ -44,7 +42,7 @@ namespace GraphDB.Utility
 
         private static bool IsSerialableProperty(PropertyInfo pInfo)
         {
-            if (pInfo.CustomAttributes.Any(x => x.AttributeType.Name == typeof(SerializableAttribute).Name))
+            if (pInfo.CustomAttributes.Any(x => x.AttributeType.Name == typeof(XmlSerializableAttribute).Name))
             {
                 return true;
             }

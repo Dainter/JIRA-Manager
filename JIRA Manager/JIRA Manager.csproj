@@ -48,6 +48,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="GraphDB" />
+	<Reference Include="RibbonControlsLibrary">
+      <HintPath>..\3rdParty\Microsoft Ribbon for WPF\V4.0\RibbonControlsLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
@@ -69,6 +72,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\IRemoteReader.cs" />
+    <Compile Include="Data\JiraReader.cs" />
+    <Compile Include="Data\TfsReader.cs" />
     <Compile Include="Model\Relations\Assigned.cs" />
     <Compile Include="Model\Relations\AssignedTo.cs" />
     <Compile Include="Model\Relations\BelongsTo.cs" />
@@ -77,9 +83,14 @@
     <Compile Include="Model\Relations\ReportBy.cs" />
     <Compile Include="Model\Relations\Submit.cs" />
     <Compile Include="Model\Relations\SubmitBy.cs" />
+    <Compile Include="Model\Tasks\JiraStory.cs" />
+    <Compile Include="Model\Tasks\JiraSubTask.cs" />
+    <Compile Include="Model\Tasks\JiraStatus.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\UserGroup.cs" />
     <Compile Include="Utility\CommonStrings.cs" />
+    <Compile Include="Utility\StringHelper.cs" />
+    <Compile Include="Utility\XmlElementExtension.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -94,10 +105,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Tasks\Defect.cs" />
-    <Compile Include="Model\Tasks\SubTask.cs" />
-    <Compile Include="Model\Tasks\Task.cs" />
-    <Compile Include="Model\Tasks\Wish.cs" />
+    <Compile Include="Model\Tasks\JiraBug.cs" />
+    <Compile Include="Model\Tasks\JiraTask.cs" />
+    <Compile Include="Model\Tasks\JiraIssue.cs" />
+    <Compile Include="Model\Tasks\JiraWish.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -125,9 +136,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

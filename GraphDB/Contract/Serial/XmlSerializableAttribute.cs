@@ -3,7 +3,7 @@
 namespace GraphDB.Contract.Serial
 {
     [AttributeUsage(AttributeTargets.Property)]
-    public class SerializableAttribute : Attribute
+    public class XmlSerializableAttribute : Attribute
     {
          
     }

@@ -1,9 +1,9 @@
 ﻿using System.Xml;
 
-namespace GraphDB.Utility
+namespace JIRA.Manager.Utility
 {
     //XmlElement功能扩展方法
-    internal static class XmlElementExtension
+    public static class XmlElementExtension
     {
         //工具函数，从xml节点中读取某个标签的InnerText
         public static string GetText(this XmlElement curNode, string sLabel)

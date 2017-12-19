@@ -17,10 +17,10 @@ namespace GraphDB.Core
         private readonly List<IEdge> myOutLink;       //连边 使用字典结构存放（目标节点号，连边对象）
         private readonly List<IEdge> myInLink;
         //属性///////////////////////////////
-        [Serializable]
+        [XmlSerializable]
         public string Guid => myGuid;
 
-        [Serializable]
+        [XmlSerializable]
         public string Name => myName;
 
         public int InDegree => myInLink.Count;

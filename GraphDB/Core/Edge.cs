@@ -56,7 +56,7 @@ namespace GraphDB.Core
                 
             }
         }
-        [Serializable]
+        [XmlSerializable]
         public string FromGuid
         {
             get
@@ -68,7 +68,7 @@ namespace GraphDB.Core
                 myFromGuid = value;
             }
         }
-        [Serializable]
+        [XmlSerializable]
         public string ToGuid
         {
             get
@@ -80,9 +80,9 @@ namespace GraphDB.Core
                 myToGuid = value;
             }
         }
-        [Serializable]
+        [XmlSerializable]
         public string Attribute => myAttribute;
-        [Serializable]
+        [XmlSerializable]
         public string Value
         {
             get

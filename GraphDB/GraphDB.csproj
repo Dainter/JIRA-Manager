@@ -56,7 +56,7 @@
     <Compile Include="Contract\Enum\EdgeDirection.cs" />
     <Compile Include="Contract\Enum\ModifyOperation.cs" />
     <Compile Include="Contract\Serial\IIoStrategy.cs" />
-    <Compile Include="Contract\Serial\SerializableAttribute.cs" />
+    <Compile Include="Contract\Serial\XmlSerializableAttribute.cs" />
     <Compile Include="Tool\ConfigWindow.xaml.cs">
       <DependentUpon>ConfigWindow.xaml</DependentUpon>
     </Compile>

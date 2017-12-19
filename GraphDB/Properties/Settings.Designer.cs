@@ -25,12 +25,10 @@ namespace GraphDB.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
-<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
-  <string>GraphDB.dll</string>
-  <string>GraphDB.Constructor.Semantic.dll</string>
-  <string>GraphDB.App.exe</string>
-</ArrayOfString>")]
+        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
+            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
+            "tring>GraphDB.dll</string>\r\n  <string>JIRA Manager.exe</string>\r\n</ArrayOfString" +
+            ">")]
         public global::System.Collections.Specialized.StringCollection SerialAssemblyList {
             get {
                 return ((global::System.Collections.Specialized.StringCollection)(this["SerialAssemblyList"]));

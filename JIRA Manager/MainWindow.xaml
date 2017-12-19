@@ -18,6 +18,7 @@
                     <GridViewColumn Header="Reporter" DisplayMemberBinding="{Binding Reporter}"  />
                     <GridViewColumn Header="Assignee" DisplayMemberBinding="{Binding Assignee}" />
                     <GridViewColumn Header="Priority" DisplayMemberBinding="{Binding Priority}" />
+                    <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Status}" />
                 </GridView>
             </ListView.View>
         </ListView>
